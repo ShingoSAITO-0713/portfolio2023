@@ -29,8 +29,6 @@ export default function Register() {
         e.target.language.value = 0;
         e.target.publishDate.value = '';
         e.target.url.value = '';
-
-        location.href = `/thesis/${key}`;
     }
 
     return (
