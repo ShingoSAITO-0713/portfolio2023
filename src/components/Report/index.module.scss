@@ -1,0 +1,16 @@
+$color-main: #f5f5dc;
+$color-shadow: #808080;
+
+.container {
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+
+    .card {
+        background-color: $color-main;
+        width: 50rem;
+        border-radius: 10px 50px;
+        padding-left: 3rem;
+        box-shadow: 10px 5px 5px $color-shadow;
+    }
+}
