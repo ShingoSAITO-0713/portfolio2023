@@ -19,15 +19,18 @@ export default function Register() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            method: 'POST'
+            method: 'POST',
         });
 
         const result = await res.json();
-        alert(`${result.key}を登録しました`);
+        const key = result.key;
+        alert(`${key}を登録しました`);
         e.target.title.value = '';
         e.target.language.value = 0;
         e.target.publishDate.value = '';
         e.target.url.value = '';
+
+        location.href = `/thesis/${key}`;
     }
 
     return (
@@ -36,45 +39,45 @@ export default function Register() {
                 <div className={styles.container}>
                     <form onSubmit={submitHandler}>
                         <div className={styles.title}>
-                            <label htmlFor='title'>タイトル</label>
-                            <input type='text' name='title' id='title' />
+                            <label htmlFor="title">タイトル</label>
+                            <input type="text" name="title" id="title" />
                         </div>
                         <div className={styles.language}>
-                            <label htmlFor=''>言語</label>
+                            <label htmlFor="">言語</label>
                             <div>
                                 <input
-                                    type='radio'
-                                    name='language'
-                                    id='language'
+                                    type="radio"
+                                    name="language"
+                                    id="language"
                                     value={0}
                                     defaultChecked
                                 />
-                                <label htmlFor='language'>日本語</label>
+                                <label htmlFor="language">日本語</label>
                                 <input
-                                    type='radio'
-                                    name='language'
-                                    id='language'
+                                    type="radio"
+                                    name="language"
+                                    id="language"
                                     value={1}
                                 />
-                                <label htmlFor='language'>英語</label>
+                                <label htmlFor="language">英語</label>
                             </div>
                         </div>
                         <div className={styles['publish-date']}>
-                            <label htmlFor='publish-date'>発行年月</label>
+                            <label htmlFor="publish-date">発行年月</label>
                             <input
-                                type='text'
-                                name='publish-date'
-                                id='publishDate'
+                                type="text"
+                                name="publish-date"
+                                id="publishDate"
                             />
                         </div>
                         <div className={styles.url}>
-                            <label htmlFor='url'>URL</label>
-                            <input type='text' name='url' />
+                            <label htmlFor="url">URL</label>
+                            <input type="text" name="url" />
                         </div>
                         <div className={styles.submit}>
                             <input
-                                type='submit'
-                                value='登録'
+                                type="submit"
+                                value="登録"
                                 className={styles.button}
                             />
                         </div>
