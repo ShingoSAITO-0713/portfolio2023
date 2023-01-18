@@ -102,8 +102,6 @@ export default function Edit(props) {
             is_read: e.target.isRead.value,
         };
 
-        console.log(data);
-
         const url = 'https://7fdecq.deta.dev/put';
         const res = await fetch(url, {
             body: JSON.stringify(data),
@@ -114,7 +112,9 @@ export default function Edit(props) {
         });
 
         const result = await res.json();
-        alert(`${result.key}を更新しました`);
+        const key = result.key;
+        alert(`${key}を更新しました`);
+        history.back();
     }
 
     return (
