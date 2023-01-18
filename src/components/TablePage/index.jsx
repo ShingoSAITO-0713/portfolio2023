@@ -11,9 +11,9 @@ export function TablePage(props) {
                     <thead>
                         <tr>
                             <th width={1000}>タイトル</th>
-                            <th width={100}>言語</th>
-                            <th width={200}>発行年</th>
-                            <th width={300}>URL</th>
+                            <th width={400}>URL</th>
+                            <th width={70}>言語</th>
+                            <th width={70}>発行年</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,9 +29,9 @@ export function TablePage(props) {
                                     <td>
                                         <Link href={`/thesis/${key}`}>{title}</Link>
                                     </td>
-                                    <td>{language ? '英語' : '日本語'}</td>
-                                    <td>{publishDate}</td>
                                     <td>{url}</td>
+                                    <td className={styles.text_center}>{language ? '英語' : '日本語'}</td>
+                                    <td className={styles.text_center}>{publishDate}</td>
                                 </tr>
                             );
                         })}
