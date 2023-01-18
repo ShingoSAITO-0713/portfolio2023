@@ -1,0 +1,26 @@
+$color-sub: #5f9ea0;
+
+.container {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    .items_table {
+        padding-top: .5rem;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+        table {
+            width: 95%;
+            border-collapse: collapse;
+
+            thead {
+                tr {
+                    th {
+                        background-color: $color-sub;
+                    }
+                }
+            }
+        }
+    }
+}

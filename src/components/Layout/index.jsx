@@ -19,12 +19,12 @@ export function Layout(props) {
                         </li>
                         <li>
                             <span className={styles.under_line}>
-                                <Link href={''}>論文一覧</Link>
+                                <Link href={'/thesis'}>論文一覧</Link>
                             </span>
                         </li>
                         <li>
                             <span className={styles.under_line}>
-                                <Link href={''}>論文管理</Link>
+                                <Link href={'/register'}>論文管理</Link>
                             </span>
                         </li>
                     </ul>

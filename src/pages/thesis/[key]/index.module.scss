@@ -1,0 +1,35 @@
+$color-main: #f5f5dc;
+
+.container {
+    background-color: $color-main;
+    border-radius: 10px;
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    .details {
+        width: 100%;
+
+        ul {
+            li {
+                list-style: none;
+                padding-bottom: 0.5rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .controller {
+        display: flex;
+
+        .link {
+            padding-right: 1rem;
+        }
+    }
+}

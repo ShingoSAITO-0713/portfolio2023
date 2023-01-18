@@ -1,0 +1,57 @@
+$color-main: #f5f5dc;
+
+.container {
+    background-color: $color-main;
+    border-radius: 10px;
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        width: 35rem;
+        height: 40rem;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+        }
+
+        .language {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+        }
+
+        .publish-date {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+        }
+
+        .url {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+            padding-top: 3rem;
+
+            .button {
+                width: 60px;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px black solid;
+            }
+
+            .button:hover {
+                background-color: #dfdfdf;
+            }
+        }
+    }
+}
