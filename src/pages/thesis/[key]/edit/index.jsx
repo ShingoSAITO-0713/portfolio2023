@@ -51,22 +51,7 @@ function languageCheckBox(language) {
 }
 
 function isReadCheckBox(isRead) {
-    if (isRead) {
-        return (
-            <div>
-                <input type="radio" name="isRead" id="isRead" value={0} />
-                <label htmlFor="isRead">未読</label>
-                <input
-                    type="radio"
-                    name="isRead"
-                    id="isRead"
-                    value={1}
-                    defaultChecked
-                />
-                <label htmlFor="isRead">既読</label>
-            </div>
-        );
-    } else {
+    if (isRead === null || isRead === 0) {
         return (
             <div>
                 <input
@@ -81,12 +66,29 @@ function isReadCheckBox(isRead) {
                 <label htmlFor="isRead">既読</label>
             </div>
         );
+    } else {
+        return (
+            <div>
+                <input type="radio" name="isRead" id="isRead" value={0} />
+                <label htmlFor="isRead">未読</label>
+                <input
+                    type="radio"
+                    name="isRead"
+                    id="isRead"
+                    value={1}
+                    defaultChecked
+                />
+                <label htmlFor="isRead">既読</label>
+            </div>
+        );
     }
 }
 
 export default function Edit(props) {
     const title = '編集・追加';
     const details = props.details;
+
+    console.log(details)
 
     async function submitHandler(e) {
         e.preventDefault();
@@ -183,7 +185,7 @@ export default function Edit(props) {
                         </div>
                         <div className={styles.details}>
                             <label htmlFor="">既読</label>
-                            {isReadCheckBox(details.isRead)}
+                            {isReadCheckBox(details.is_read)}
                         </div>
                         <div className={styles.submit}>
                             <input
