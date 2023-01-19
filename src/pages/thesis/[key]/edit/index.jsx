@@ -88,7 +88,7 @@ export default function Edit(props) {
     const title = '編集・追加';
     const details = props.details;
 
-    console.log(details)
+    console.log(details);
 
     async function submitHandler(e) {
         e.preventDefault();

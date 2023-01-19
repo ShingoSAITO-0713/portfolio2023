@@ -20,13 +20,13 @@ const types = {
     read: '条件: 既読',
     unread: '条件: 未読',
     ja: '条件: 日本語',
-    en: '条件: 英語'
-}
+    en: '条件: 英語',
+};
 
 export default function filterTypePage(props) {
-    const type = props.type
+    const type = props.type;
     const title = types[type];
-    const data = props.data
+    const data = props.data;
 
     return (
         <div>
