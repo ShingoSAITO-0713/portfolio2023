@@ -24,7 +24,7 @@ export function Layout(props) {
                         </li>
                         <li>
                             <span className={styles.under_line}>
-                                <Link href={'/register'}>論文管理</Link>
+                                <Link href={'/register'}>論文登録</Link>
                             </span>
                         </li>
                     </ul>
