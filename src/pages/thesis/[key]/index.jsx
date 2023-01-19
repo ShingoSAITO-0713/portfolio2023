@@ -33,7 +33,13 @@ export default function ThesisDetails(props) {
                         <ul>
                             <li>
                                 <span>言語:</span>{' '}
-                                {details.language ? '英語' : '日本語'}
+                                {details.language ? (
+                                    <Link href={'/thesis/filter/en'}>英語</Link>
+                                ) : (
+                                    <Link href={'/thesis/filter/ja'}>
+                                        日本語
+                                    </Link>
+                                )}
                             </li>
                             <li>
                                 <span>発行年:</span> {details.publish_date}
@@ -56,9 +62,18 @@ export default function ThesisDetails(props) {
                                     <span>書誌:</span> {details.magazine}
                                 </li>
                             ) : null}
-                            {details.isRead ? (
+                            {details.is_read != null ? (
                                 <li>
-                                    <span>既読:</span> {details.isRead}
+                                    <span>既読:</span>{' '}
+                                    {details.is_read ? (
+                                        <Link href={'/thesis/filter/read'}>
+                                            既読
+                                        </Link>
+                                    ) : (
+                                        <Link href={'/thesis/filter/unread'}>
+                                            未読
+                                        </Link>
+                                    )}
                                 </li>
                             ) : null}
                             <li>
@@ -67,7 +82,10 @@ export default function ThesisDetails(props) {
                         </ul>
                     </div>
                     <div className={styles.controller}>
-                        <Link href={`/thesis/${key}/edit`} className={styles.link}>
+                        <Link
+                            href={`/thesis/${key}/edit`}
+                            className={styles.link}
+                        >
                             編集
                         </Link>
                         <Link href={``} className={styles.link}>
