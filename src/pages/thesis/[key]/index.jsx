@@ -21,6 +21,24 @@ export default function ThesisDetails(props) {
     const details = props.details;
     const key = details.key;
 
+    async function buttonHandler(e) {
+        e.preventDefault;
+        const btnId = e.target.id;
+
+        if (btnId === 'edit') {
+            location.href = `/thesis/${key}/edit`;
+        } else {
+            const url = `https://7fdecq.deta.dev/delete/${key}`;
+            const res = await fetch(url, { method: 'DELETE' });
+
+            const result = await res.json();
+            alert(`${key}を削除しました`);
+            location.href = `/thesis`;
+        }
+
+        return;
+    }
+
     return (
         <div>
             <Layout title={title}>
@@ -82,15 +100,24 @@ export default function ThesisDetails(props) {
                         </ul>
                     </div>
                     <div className={styles.controller}>
-                        <Link
-                            href={`/thesis/${key}/edit`}
-                            className={styles.link}
-                        >
-                            編集
-                        </Link>
-                        <Link href={``} className={styles.link}>
-                            削除
-                        </Link>
+                        <div>
+                            <input
+                                type="button"
+                                value="編集"
+                                name="btn"
+                                id="edit"
+                                onClick={buttonHandler}
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="button"
+                                value="削除"
+                                name="btn"
+                                id="delete"
+                                onClick={buttonHandler}
+                            />
+                        </div>
                     </div>
                 </div>
             </Layout>
