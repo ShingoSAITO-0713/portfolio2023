@@ -11,7 +11,7 @@ $color-main: #f5f5dc;
     flex-direction: column;
 
     .details {
-        width: 100%;
+        width: 90%;
 
         ul {
             li {
@@ -30,6 +30,16 @@ $color-main: #f5f5dc;
 
         div {
             padding-right: 1rem;
+
+            input {
+                width: 60px;
+                height: 40px;
+            }
         }
+    }
+
+    .backButton {
+        display: flex;
+        width: 90%;
     }
 }

@@ -1,5 +1,6 @@
 import styles from 'src/pages/register/index.module.scss';
 import { Layout } from 'src/components/Layout';
+import { BackButton } from 'src/components/BackButton';
 
 export default function Register() {
     const title = '論文登録';
@@ -79,6 +80,7 @@ export default function Register() {
                                 className={styles.button}
                             />
                         </div>
+                        <BackButton />
                     </form>
                 </div>
             </Layout>
