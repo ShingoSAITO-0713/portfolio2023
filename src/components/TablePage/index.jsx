@@ -33,7 +33,15 @@ export function TablePage(props) {
                                     </td>
                                     <td>{url}</td>
                                     <td className={styles.text_center}>
-                                        {language ? '英語' : '日本語'}
+                                        {language ? (
+                                            <Link href={'/thesis/filter/en'}>
+                                                英語
+                                            </Link>
+                                        ) : (
+                                            <Link href={'/thesis/filter/ja'}>
+                                                日本語
+                                            </Link>
+                                        )}
                                     </td>
                                     <td className={styles.text_center}>
                                         {publishDate}
