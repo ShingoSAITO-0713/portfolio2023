@@ -1,4 +1,4 @@
-import styles from 'src/components/Report/index.module.scss'
+import styles from 'src/components/Report/index.module.scss';
 
 export function Report(props) {
     const date = props.date;
@@ -12,5 +12,5 @@ export function Report(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
