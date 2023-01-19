@@ -1,6 +1,7 @@
 import styles from 'src/pages/thesis/[key]/index.module.scss';
 import { Layout } from 'src/components/Layout';
 import Link from 'next/link';
+import { BackButton } from 'src/components/BackButton';
 
 export async function getServerSideProps({ query }) {
     const key = query.key;
@@ -119,6 +120,9 @@ export default function ThesisDetails(props) {
                                 onClick={buttonHandler}
                             />
                         </div>
+                    </div>
+                    <div className={styles.backButton}>
+                        <BackButton />
                     </div>
                 </div>
             </Layout>

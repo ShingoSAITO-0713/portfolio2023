@@ -1,5 +1,6 @@
 import styles from 'src/pages/thesis/[key]/edit/index.module.scss';
 import { Layout } from 'src/components/Layout';
+import { BackButton } from 'src/components/BackButton';
 
 export async function getServerSideProps({ query }) {
     const key = query.key;
@@ -194,6 +195,7 @@ export default function Edit(props) {
                                 className={styles.button}
                             />
                         </div>
+                        <BackButton />
                     </form>
                 </div>
             </Layout>
