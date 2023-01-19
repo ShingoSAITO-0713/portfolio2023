@@ -27,11 +27,25 @@ export function TablePage(props) {
                             return (
                                 <tr key={key}>
                                     <td>
-                                        <Link href={`/thesis/${key}`}>{title}</Link>
+                                        <Link href={`/thesis/${key}`}>
+                                            {title}
+                                        </Link>
                                     </td>
                                     <td>{url}</td>
-                                    <td className={styles.text_center}>{language ? '英語' : '日本語'}</td>
-                                    <td className={styles.text_center}>{publishDate}</td>
+                                    <td className={styles.text_center}>
+                                        {language ? (
+                                            <Link href={'/thesis/filter/en'}>
+                                                英語
+                                            </Link>
+                                        ) : (
+                                            <Link href={'/thesis/filter/ja'}>
+                                                日本語
+                                            </Link>
+                                        )}
+                                    </td>
+                                    <td className={styles.text_center}>
+                                        {publishDate}
+                                    </td>
                                 </tr>
                             );
                         })}
