@@ -2,6 +2,7 @@ import styles from 'src/pages/thesis/[key]/index.module.scss';
 import { Layout } from 'src/components/Layout';
 import Link from 'next/link';
 import { BackButton } from 'src/components/BackButton';
+import { useState, useEffect } from 'react';
 
 export async function getServerSideProps({ query }) {
     const key = query.key;
@@ -22,13 +23,34 @@ export default function ThesisDetails(props) {
     const details = props.details;
     const key = details.key;
 
+    const [magazineEditorIsShow, setMagazineEditorIsShow] = useState(false);
+
+    function showMagazineEditor(magazineEditorIsShow) {
+        if (magazineEditorIsShow) {
+            return (
+                <div>
+                    <form>
+                        <input type="text" defaultValue={details.key}/>
+                        <input type="submit" value="更新" />
+                    </form>
+                </div>
+            )
+        } else {
+            return
+        }
+    }
+
     async function buttonHandler(e) {
         e.preventDefault;
         const btnId = e.target.id;
 
         if (btnId === 'edit') {
             location.href = `/thesis/${key}/edit`;
-        } else {
+        } else if (btnId === 'magazine') {
+            console.log(magazineEditorIsShow)
+            setMagazineEditorIsShow(!magazineEditorIsShow)
+        }
+        else {
             const url = `https://7fdecq.deta.dev/delete/${key}`;
 
             const res = await fetch(url, { method: 'DELETE' });
@@ -77,11 +99,17 @@ export default function ThesisDetails(props) {
                                     <span>ページ:</span> {details.page}
                                 </li>
                             ) : null}
-                            {details.magazine ? (
-                                <li>
-                                    <span>書誌:</span> {details.magazine}
-                                </li>
-                            ) : null}
+                            <li>
+                                <span>書誌:</span> {details.magazine}
+                                <input
+                                    type="button"
+                                    value="編集"
+                                    id="magazine"
+                                    name="btn"
+                                    onClick={buttonHandler}
+                                />
+                                {showMagazineEditor(magazineEditorIsShow)}
+                            </li>
                             {details.is_read != null ? (
                                 <li>
                                     <span>既読:</span>{' '}
