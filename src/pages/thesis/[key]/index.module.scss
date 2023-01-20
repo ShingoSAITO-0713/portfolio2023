@@ -18,6 +18,11 @@ $color-main: #f5f5dc;
                 list-style: none;
                 padding-bottom: 0.5rem;
 
+                div {
+                    display: inline;
+                    padding-right: .5rem;
+                }
+
                 span {
                     font-weight: bold;
                 }

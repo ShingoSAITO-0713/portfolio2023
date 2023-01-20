@@ -42,6 +42,8 @@ export default function Register() {
                 method: 'POST',
             });
 
+            console.log(data)
+
             const result = await res.json();
             const key = result.key;
             alert(`${key}を登録しました`);

@@ -69,7 +69,11 @@ export default function ThesisDetails(props) {
                                 <span>URL:</span> {details.url}
                             </li>
                             <li>
-                                <span>著者:</span> {details.authors}
+                                <span>著者:</span> {details.authors.map((item, index) => {
+                                    return (
+                                        <div key={index}>{item}</div>
+                                    )
+                                })}
                             </li>
                             {details.page ? (
                                 <li>

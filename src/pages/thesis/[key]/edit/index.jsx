@@ -101,6 +101,8 @@ export default function Edit(props) {
             url: e.target.url.value,
             page: e.target.page.value,
             is_read: e.target.isRead.value,
+            magazine: e.target.magazine.value,
+            authors: e.target.authors.value.split(',')
         };
 
         const url = 'https://7fdecq.deta.dev/put';
@@ -166,9 +168,17 @@ export default function Edit(props) {
                                 defaultValue={details.page}
                             />
                         </div>
-                        <div className={styles.details}>
+                        <div className={styles.detail}>
                             <label htmlFor="">既読</label>
                             {isReadCheckBox(details.is_read)}
+                        </div>
+                        <div className={styles.detail}>
+                            <label htmlFor="magazine">書誌</label>
+                            <input type="text" name="magazine" id="magazine" defaultValue={details.magazine} />
+                        </div>
+                        <div className={styles.detail}>
+                            <label htmlFor="authors">著者</label>
+                            <input type="text" name="authors" id="authors" defaultValue={details.authors} />
                         </div>
                         <div className={styles.submit}>
                             <input
