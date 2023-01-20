@@ -115,10 +115,11 @@ export default function Edit(props) {
         const result = await res.json();
         const key = result.key;
 
+
         console.log(data);
 
         alert(`${details.key}を更新しました`);
-        history.back();
+        //history.back();
     }
 
     return (
