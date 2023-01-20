@@ -99,9 +99,7 @@ export default function Edit(props) {
             language: e.target.language.value,
             publish_date: e.target.publishDate.value,
             url: e.target.url.value,
-            authors: e.target.authors.value.split(','),
             page: e.target.page.value,
-            magazine: e.target.magazine.value,
             is_read: e.target.isRead.value,
         };
 
@@ -117,7 +115,8 @@ export default function Edit(props) {
         const result = await res.json();
         const key = result.key;
 
-        console.log(result)
+
+        console.log(data);
 
         alert(`${details.key}を更新しました`);
         //history.back();
@@ -159,32 +158,12 @@ export default function Edit(props) {
                             />
                         </div>
                         <div className={styles.detail}>
-                            <label htmlFor="authors">
-                                著者(複数の場合は，(,)で区切ってください)
-                            </label>
-                            <input
-                                type="text"
-                                name="authors"
-                                id="authors"
-                                defaultValue={details.authors}
-                            />
-                        </div>
-                        <div className={styles.detail}>
                             <label htmlFor="page">ページ(p.○-○)</label>
                             <input
                                 type="text"
                                 name="page"
                                 id="page"
                                 defaultValue={details.page}
-                            />
-                        </div>
-                        <div className={styles.detail}>
-                            <label htmlFor="magazine">書誌</label>
-                            <input
-                                type="text"
-                                name="magazine"
-                                id="magazine"
-                                defaultValue={details.magazine}
                             />
                         </div>
                         <div className={styles.details}>
