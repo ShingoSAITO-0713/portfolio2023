@@ -23,34 +23,13 @@ export default function ThesisDetails(props) {
     const details = props.details;
     const key = details.key;
 
-    const [magazineEditorIsShow, setMagazineEditorIsShow] = useState(false);
-
-    function showMagazineEditor(magazineEditorIsShow) {
-        if (magazineEditorIsShow) {
-            return (
-                <div>
-                    <form>
-                        <input type="text" defaultValue={details.key}/>
-                        <input type="submit" value="更新" />
-                    </form>
-                </div>
-            )
-        } else {
-            return
-        }
-    }
-
     async function buttonHandler(e) {
         e.preventDefault;
         const btnId = e.target.id;
 
         if (btnId === 'edit') {
             location.href = `/thesis/${key}/edit`;
-        } else if (btnId === 'magazine') {
-            console.log(magazineEditorIsShow)
-            setMagazineEditorIsShow(!magazineEditorIsShow)
-        }
-        else {
+        } else {
             const url = `https://7fdecq.deta.dev/delete/${key}`;
 
             const res = await fetch(url, { method: 'DELETE' });
@@ -89,11 +68,9 @@ export default function ThesisDetails(props) {
                             <li>
                                 <span>URL:</span> {details.url}
                             </li>
-                            {details.author ? (
-                                <li>
-                                    <span>著者:</span> {details.authors}
-                                </li>
-                            ) : null}
+                            <li>
+                                <span>著者:</span> {details.authors}
+                            </li>
                             {details.page ? (
                                 <li>
                                     <span>ページ:</span> {details.page}
@@ -101,14 +78,6 @@ export default function ThesisDetails(props) {
                             ) : null}
                             <li>
                                 <span>書誌:</span> {details.magazine}
-                                <input
-                                    type="button"
-                                    value="編集"
-                                    id="magazine"
-                                    name="btn"
-                                    onClick={buttonHandler}
-                                />
-                                {showMagazineEditor(magazineEditorIsShow)}
                             </li>
                             {details.is_read != null ? (
                                 <li>
