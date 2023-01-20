@@ -105,19 +105,19 @@ export default function Edit(props) {
             is_read: e.target.isRead.value,
         };
 
-        const url = 'https://7fdecq.deta.dev/post/update';
+        const url = 'https://7fdecq.deta.dev/put';
         const res = await fetch(url, {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
             },
-            method: 'POST',
+            method: 'PUT',
         });
 
         const result = await res.json();
         const key = result.key;
 
-        console.log(data)
+        console.log(result)
 
         alert(`${details.key}を更新しました`);
         //history.back();
