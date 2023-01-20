@@ -105,13 +105,13 @@ export default function Edit(props) {
             is_read: e.target.isRead.value,
         };
 
-        const url = 'https://7fdecq.deta.dev/put';
+        const url = 'https://7fdecq.deta.dev/post/update';
         const res = await fetch(url, {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
             },
-            method: 'PUT',
+            method: 'POST',
         });
 
         const result = await res.json();
