@@ -120,7 +120,7 @@ export default function Edit(props) {
         console.log(data)
 
         alert(`${details.key}を更新しました`);
-        history.back();
+        //history.back();
     }
 
     return (
